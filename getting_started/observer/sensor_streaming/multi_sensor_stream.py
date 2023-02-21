@@ -55,10 +55,12 @@ def main():
             service=RvrStreamingServices.ambient_light,
             handler=ambient_light_handler
         )
-        rvr.sensor_control.add_sensor_data_handler(
-            service=RvrStreamingServices.encoders,
-            handler=encoder_handler
-        )
+        
+        # XXX not supported by latest pypi release sphero_sdk==0.3.2 (2023)
+#         rvr.sensor_control.add_sensor_data_handler(
+#             service=RvrStreamingServices.encoders,
+#             handler=encoder_handler
+#         )
 
         rvr.sensor_control.start(interval=250)
 
